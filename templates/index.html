@@ -1,7 +1,7 @@
 <html lang="en-US" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--
     Document Title
@@ -62,9 +62,9 @@
             <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-              <a class="navbar-brand" href="index.html">PreSound</a>
+              <a class="navbar-brand" href={{ url_for('home') }}>PreSound</a>
           </div>
-          {#<div class="collapse navbar-collapse" id="custom-collapse">
+          <div class="collapse navbar-collapse" id="custom-collapse">
             <ul class="nav navbar-nav navbar-right">
               <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Home</a>
                 <ul class="dropdown-menu">
@@ -274,7 +274,7 @@
               <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Features</a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a href="alerts-and-wells.html"><i class="fa fa-bolt"></i> Alerts and Wells</a></li>
-                  <li><a href="buttons.html"><i class="fa fa-link fa-sm"></i> Buttons</a></li>
+                  <li><a href="stt.html"><i class="fa fa-link fa-sm"></i> Buttons</a></li>
                   <li><a href="tabs_and_accordions.html"><i class="fa fa-tasks"></i> Tabs &amp; Accordions</a></li>
                   <li><a href="content_box.html"><i class="fa fa-list-alt"></i> Contents Box</a></li>
                   <li><a href="forms.html"><i class="fa fa-check-square-o"></i> Forms</a></li>
@@ -294,7 +294,7 @@
                   <li><a href="shop_single_product.html">Single Product</a></li>
                   <li><a href="shop_checkout.html">Checkout</a></li>
                 </ul>
-              </li>#}
+              </li>
               <!--li.dropdown.navbar-cart-->
               <!--    a.dropdown-toggle(href='#', data-toggle='dropdown')-->
               <!--        span.icon-basket-->
@@ -342,18 +342,18 @@
               <!--                    |-->
               <!--                    button.search-btn(type='submit')-->
               <!--                        i.fa.fa-search-->
-              {#<li class="dropdown"><a class="dropdown-toggle" href="documentation.html" data-toggle="dropdown">Documentation</a>
-{#                <ul class="dropdown-menu">#}
-{#                  <li><a href="documentation.html#contact">Contact Form</a></li>#}
-{#                  <li><a href="documentation.html#reservation">Reservation Form</a></li>#}
-{#                  <li><a href="documentation.html#mailchimp">Mailchimp</a></li>#}
-{#                  <li><a href="documentation.html#gmap">Google Map</a></li>#}
-{#                  <li><a href="documentation.html#plugin">Plugins</a></li>#}
-{#                  <li><a href="documentation.html#changelog">Changelog</a></li>#}
-{#                </ul>#}
-{#              </li>#}
-{#            </ul>#}
-{#          </div>#}
+<!--             <li class="dropdown"><a class="dropdown-toggle" href="documentation.html" data-toggle="dropdown">Documentation</a>
+                <ul class="dropdown-menu">
+                  <li><a href="documentation.html#contact">Contact Form</a></li>
+                  <li><a href="documentation.html#reservation">Reservation Form</a></li>
+                  <li><a href="documentation.html#mailchimp">Mailchimp</a></li>
+                  <li><a href="documentation.html#gmap">Google Map</a></li>
+                  <li><a href="documentation.html#plugin">Plugins</a></li>
+                  <li><a href="documentation.html#changelog">Changelog</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>-->
        </div>
       </nav>
         <div style="max-height: 754px;">
@@ -461,13 +461,13 @@
             </div>
           </div>-->
           <ul class="works-grid works-grid-gut works-grid-3 works-hover-w" id="works-grid">
-            <li class="work-item illustration webdesign"><a href="portfolio_single_featured_image1.html">
+            <li class="work-item illustration webdesign"><a href={{ url_for('ml') }}>
                 <div class="work-image"><img src="/static/images/portfolio/grid-portfolio1.jpg" alt="Portfolio Item"/></div>
                 <div class="work-caption font-alt">
                   <h3 class="work-title">Sound Classification</h3>
                   <div class="work-descr">소리 인식 및 분류로 사고 예방</div>
                 </div></a></li>
-            <li class="work-item marketing photography"><a href="portfolio_single_featured_image2.html">
+            <li class="work-item marketing photography"><a href={{ url_for('stt') }}>
                 <div class="work-image"><img src="/static/images/portfolio/grid-portfolio2.jpg" alt="Portfolio Item"/></div>
                 <div class="work-caption font-alt">
                   <h3 class="work-title">STT Service</h3>
