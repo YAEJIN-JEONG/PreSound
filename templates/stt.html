@@ -89,19 +89,21 @@
         <section class="module">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-8 col-sm-offset-2">
-                        <div class="row">
+                    <div class= col-sm-offset-2"><!--col-sm-8-->
+                        <div class="row" style="margin-left: 240px;margin-top: -70px;">
                             <p>
-                                <button class="btn btn-success btn-circle btn-block" type="button">Speech to Text
+                                <button class="btn btn-circle" type="button" onclick="startSpeechRecognition();" style="background-color: lavender;">
+                                    <img src="{{ url_for('static', filename = 'mic1.png')}}" style="width:230px;"></button>
+                                <button class="btn btn-circle" type="button" onclick="endSpeechRecognition();"  style="background-color: white;">
+                                    <img src="{{ url_for('static', filename = 'stop2.png')}}" style="width:100px;">
                                 </button>
-                                <input type="text" id="speech_result"/>
-                                <button class="btn btn-success btn-circle btn-block" type="button"
-                                        onclick="startSpeechRecognition();">Start Record
-                                </button>
-                                <button class="btn btn-success btn-circle btn-block" type="button"
-                                        onclick="endSpeechRecognition();">Stop Record
-                                </button>
-                                <script>
+                                <input type="text" id="speech_result" style="height: 250px;width: 400px;border-radius: 20px;background-color: lavender; border: 0;"/>
+
+                                    <!--<button class="btn btn-circle" type="button"
+                                        onclick="startSpeechRecognition();"><img src="{{ url_for('static', filename = 'play-button.png')}}" style="width:200px;">
+                                </button>-->
+
+                                <script>s
                                     let recognition = null;
 
                                     function checkCompatibility() {

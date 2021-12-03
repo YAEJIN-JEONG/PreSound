@@ -647,12 +647,12 @@ a,
 	Buttons
 --------------------------------------------------------------*/
 .btn {
-  border-radius: 0;
   font-family: "Roboto Condensed", sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 11px;
-  padding: 8px 37px;
+  border-radius: 100%;
+  /*padding: 8px 37px;*/
 }
 
 .btn.active.focus,
@@ -669,7 +669,7 @@ a,
 }
 
 .btn.btn-circle {
-  border-radius: 30px;
+  border-radius: 100px;
 }
 
 .btn.btn-w {
