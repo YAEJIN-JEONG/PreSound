@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 import ssl
-import requests,crawling
+import requests, crawling
 from bs4 import BeautifulSoup
 
 app = Flask(__name__,static_url_path='/static')
