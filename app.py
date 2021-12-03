@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request
-
+import ssl
 import requests,crawling
 from bs4 import BeautifulSoup
 
 app = Flask(__name__,static_url_path='/static')
+
 
 @app.route('/')
 def home():  # put application's code here
@@ -50,5 +51,7 @@ def news():
 
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=5000, debug=True)
+    ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS)
+    ssl_context.load_cert_chain(certfile='cert.pem', keyfile='key.pem', password='louie')
+    app.run(host="0.0.0.0", port=5001, ssl_context=ssl_context)
 
