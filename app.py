@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 import requests,crawling
 from bs4 import BeautifulSoup
 
-app = Flask(__name__)
+app = Flask(__name__,static_url_path='/static')
 
 @app.route('/')
 def home():  # put application's code here
@@ -44,7 +44,7 @@ def news():
                     'desc':desc,
                     'date':date
                 }
-                print(url,image,title,desc,date)
+                print('크롤링 완료')
 
     return render_template('news.html',news_dict=news_dict)
 
