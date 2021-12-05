@@ -71,13 +71,13 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="ml.html">Sounds</a></li>
                     <li><a href="stt.html">STT</a></li>
-                    <li><a href="news.html">News</a></li>
+                    <li><a href="{{ url_for('news') }}">News</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="main">
-        <section class="module bg-dark-30 about-page-header" data-background="/static/images/about_bg.jpg">
+        <section class="module bg-dark-30 about-page-header" data-background="{{ url_for('static', filename = 'banner.jpg')}}" >
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-sm-offset-3">
@@ -98,7 +98,7 @@
                                 <button class="btn btn-circle" type="button" onclick="endSpeechRecognition();"  style="background-color: white;">
                                     <img src="{{ url_for('static', filename = 'stop2.png')}}" style="width:100px;">
                                 </button>
-                                <input type="text" id="speech_result" style="height: 250px;width: 400px;border-radius: 20px;background-color: lavender; border: 0;"/>
+                                <input type="text" id="speech_result" style="height: 250px;width: 400px;border-radius: 20px;background-color: lavender; border: 0;font-size: 20px;"/>
 
                                     <!--<button class="btn btn-circle" type="button"
                                         onclick="startSpeechRecognition();"><img src="{{ url_for('static', filename = 'play-button.png')}}" style="width:200px;">

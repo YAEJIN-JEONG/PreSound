@@ -1583,7 +1583,7 @@ Google map
 }
 
 .alt-features-title {
-  font-size: 13px;
+  font-size: 16px;
   margin: 0 0 10px;
 }
 
@@ -1934,13 +1934,14 @@ Google map
 }
 
 .work-title {
-  font-size: 14px;
+  font-size: 20px;
   color: #fff;
   margin: 0 0 6px;
 }
 
 .work-descr {
   color: #aaa;
+  font-size: 15px;
 }
 
 .work-item:hover .work-image:after {

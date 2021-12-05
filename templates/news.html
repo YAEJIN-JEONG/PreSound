@@ -77,13 +77,13 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="ml.html">Sounds</a></li>
                     <li><a href="stt.html">STT</a></li>
-                    <li><a href="news.html">News</a></li>
+                    <li><a href="{{ url_for('news') }}">News</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <div class="main">
-        <section class="module bg-dark-60 blog-page-header" data-background="assets/images/blog_bg.jpg">
+        <section class="module bg-dark-30 about-page-header" data-background="{{ url_for('static', filename = 'banner.jpg')}}" style="height: 322px;">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-sm-offset-3">
