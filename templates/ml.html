@@ -65,16 +65,16 @@
           </div>
           <div class="collapse navbar-collapse" id="custom-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="ml.html">Sounds</a></li>
                 <li><a href="stt.html">STT</a></li>
-                <li><a href="news.html">News</a></li>
+                <li><a href="{{ url_for('news') }}">News</a></li>
             </ul>
           </div>
         </div>
       </nav>
       <div class="main">
-        <section class="module bg-dark-30 about-page-header" data-background="/static/images/about_bg.jpg">
+        <section class="module bg-dark-30 about-page-header" data-background="{{ url_for('static', filename = 'banner.jpg')}}">
           <div class="container">
             <div class="row">
               <div class="col-sm-6 col-sm-offset-3">
@@ -98,81 +98,60 @@
             </div>
         </section>
       </div>
+ <div class="module-small bg-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3"style="width:50%!important;">
+                        <div class="widget">
+                            <h5 class="widget-title font-alt">About PreSound</h5>
+                            <p>딥러닝을 이용한 청각장애인 위험방지 및 STT 서비스</p>
+                            <p><a>합성곱 신경망(CNN)을 통해 주위에 발생하는 소리를 분류하여 청각장애인에게 위험이 감지되었을 때 소리의 정보를 전달하여 안전사고를 예방할 수 있습니다.
+                            상대방의 음성을 문자로 출력하고(speech to text) 사용자가 입력하는 문자를 소리로 출력하는(text to speech) 서비스를 제공하여 사용자와 상대방 간의 원활한 의사소통이 가능합니다.
+                                청각장애인의 알 권리 충족을 위해 웹 크롤링을 사용하여 보조기기 신청자 모집, 채용 지원 등 최신 뉴스를 손쉽게 전달합니다.</a></p>
+                        </div>
+                    </div>
 
-        <div class="module-small bg-dark">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-3">
-                <div class="widget">
-                  <h5 class="widget-title font-alt">About Titan</h5>
-                  <p>The languages only differ in their grammar, their pronunciation and their most common words.</p>
-                  <p>Phone: +1 234 567 89 10</p>Fax: +1 234 567 89 10
-                  <p>Email:<a href="#">somecompany@example.com</a></p>
+                    <div class="col-sm-3">
+                        <div class="widget">
+                            <h5 class="widget-title font-alt">Customer Service </h5>
+                            <ul class="icon-list">
+                                <li>김세하 <a href="{{ url_for('stt') }}">STT Service</a></li>
+                                <br>
+                                <li>정예진 <a href="{{ url_for('news') }}">News & Information</a></li>
+                                <br>
+                                <li>정윤아 <a href="{{ url_for('ml') }}">Sound Classification</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="widget">
+                            <h5 class="widget-title font-alt">Contact Us</h5>
+                            <p>Address: <br><a href="#">강원 춘천시 강원대학길 1 공대 5호관 501호</a> </p>
+                            <p>Phone: +1 234 567 89 10</p>
+                            <p>Email:<a href="#">presound@kangwon.ac.kr</a></p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="widget">
-                  <h5 class="widget-title font-alt">Recent Comments</h5>
-                  <ul class="icon-list">
-                    <li>Maria on <a href="#">Designer Desk Essentials</a></li>
-                    <li>John on <a href="#">Realistic Business Card Mockup</a></li>
-                    <li>Andy on <a href="#">Eco bag Mockup</a></li>
-                    <li>Jack on <a href="#">Bottle Mockup</a></li>
-                    <li>Mark on <a href="#">Our trip to the Alps</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="widget">
-                  <h5 class="widget-title font-alt">Blog Categories</h5>
-                  <ul class="icon-list">
-                    <li><a href="#">Photography - 7</a></li>
-                    <li><a href="#">Web Design - 3</a></li>
-                    <li><a href="#">Illustration - 12</a></li>
-                    <li><a href="#">Marketing - 1</a></li>
-                    <li><a href="#">Wordpress - 16</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="widget">
-                  <h5 class="widget-title font-alt">Popular Posts</h5>
-                  <ul class="widget-posts">
-                    <li class="clearfix">
-                      <div class="widget-posts-image"><a href="#"><img src="/static/images/rp-1.jpg" alt="Post Thumbnail"/></a></div>
-                      <div class="widget-posts-body">
-                        <div class="widget-posts-title"><a href="#">Designer Desk Essentials</a></div>
-                        <div class="widget-posts-meta">23 january</div>
-                      </div>
-                    </li>
-                    <li class="clearfix">
-                      <div class="widget-posts-image"><a href="#"><img src="/static/images/rp-2.jpg" alt="Post Thumbnail"/></a></div>
-                      <div class="widget-posts-body">
-                        <div class="widget-posts-title"><a href="#">Realistic Business Card Mockup</a></div>
-                        <div class="widget-posts-meta">15 February</div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
         <hr class="divider-d">
         <footer class="footer bg-dark">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-6">
-                <p class="copyright font-alt">&copy; 2017&nbsp;<a href={{ url_for('home') }}>PreSound</a>, All Rights Reserved</p>
-              </div>
-              <div class="col-sm-6">
-                <div class="footer-social-links"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-dribbble"></i></a><a href="#"><i class="fa fa-skype"></i></a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p class="copyright font-alt">&copy; 2021&nbsp;<a href="index.html">Presound</a>, All Rights
+                            Reserved</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="footer-social-links"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i
+                                class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-dribbble"></i></a><a href="#"><i
+                                class="fa fa-skype"></i></a>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </footer>
-      </div>
+    </div>
       <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
     </main>
     <!--  
