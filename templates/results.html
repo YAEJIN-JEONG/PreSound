@@ -1,17 +1,218 @@
-<html>
-<link rel= "stylesheet" type= "text/css" href= "{{url_for('static',filename='styles/results.css')}}">
-<title>Results</title>
-  <div class="center-screen">
-    <div class="title">
-      <h1>Results </h1>
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    Document Title
+    =============================================
+    -->
+    <title>PreSound</title>
+    <!--
+    Favicons
+    =============================================
+    -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/static/images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/static/images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+
+<style>
+    .center-screen {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+    }
+
+    .text {
+        font-size: 30px;
+        line-height: 1.1;
+        text-align: left;
+        margin-left: -200px;
+        margin-bottom: -75px;
+    }
+
+    .items {
+        font-size: 15px;
+        line-height: 2;
+        text-align: center;
+    }
+
+</style>
+    <!--
+    Stylesheets
+    =============================================
+
+    -->
+    <!-- Default stylesheets-->
+    <link href="/static/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Template specific stylesheets-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="/static/lib/animate.css/animate.css" rel="stylesheet">
+    <link href="/static/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/lib/et-line-font/et-line-font.css" rel="stylesheet">
+    <link href="/static/lib/flexslider/flexslider.css" rel="stylesheet">
+    <link href="/static/lib/owl.carousel/dist/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/static/lib/owl.carousel/dist/assets/owl.theme.default.min.css" rel="stylesheet">
+    <link href="/static/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
+    <link href="/static/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
+    <!-- Main stylesheet and color file-->
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link id="color-scheme" href="/static/css/colors/default.css" rel="stylesheet">
+</head>
+<body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+<main>
+    <div class="page-loader">
+        <div class="loader">Loading...</div>
     </div>
-    <div class="text">
-      <p> The top-3 predictions for the file "{{filename}}" have been: </p>
-    <div class="items">
-        {% for class, probability in predictions_to_render.items() %}
-        <p> - {{ class }} with probability: {{ probability }} </p>
-        {% endfor %}
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse"><span
+                        class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                        class="icon-bar"></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand" href={{ url_for('home') }}>PreSound</a>
+            </div>
+            <div class="collapse navbar-collapse" id="custom-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('ml') }}">Sounds</a></li>
+                    <li><a href="{{ url_for('stt') }}">STT</a></li>
+                    <li><a href="{{ url_for('news') }}">News</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="main">
+        <section class="module bg-dark-30 about-page-header"
+                 data-background="{{ url_for('static', filename = 'banner.jpg') }}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <h1 class="module-title font-alt mb-0">Result</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="module">
+            <div class="container">
+                <div class="row">
+                    <div class=col-sm-offset-2"><!--col-sm-8-->
+                        <div class="row" style="margin-left: 240px;margin-top: -70px;">
+                            <div class="center-screen">
+                                <div class="text">
+                                    <p> The top-3 predictions for the file "{{ filename }}" have been: </p>
+                                    <div class="items">
+                                        {% for class, probability in predictions_to_render.items() %}
+                                            <p> - {{ class }} with probability: {{ probability }} </p>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
+    <div class="module-small bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3" style="width:50%!important;">
+                    <div class="widget">
+                        <h5 class="widget-title font-alt">About PreSound</h5>
+                        <p>딥러닝을 이용한 청각장애인 위험방지 및 STT 서비스</p>
+                        <p><a>합성곱 신경망(CNN)을 통해 주위에 발생하는 소리를 분류하여 청각장애인에게 위험이 감지되었을 때 소리의 정보를 전달하여 안전사고를 예방할 수 있습니다.
+                            상대방의 음성을 문자로 출력하고(speech to text) 사용자가 입력하는 문자를 소리로 출력하는(text to speech) 서비스를 제공하여 사용자와 상대방
+                            간의 원활한 의사소통이 가능합니다.
+                            청각장애인의 알 권리 충족을 위해 웹 크롤링을 사용하여 보조기기 신청자 모집, 채용 지원 등 최신 뉴스를 손쉽게 전달합니다.</a></p>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="widget">
+                        <h5 class="widget-title font-alt">Customer Service </h5>
+                        <ul class="icon-list">
+                            <li>김세하 <a href="{{ url_for('stt') }}">STT Service</a></li>
+                            <br>
+                            <li>정예진 <a href="{{ url_for('news') }}">News & Information</a></li>
+                            <br>
+                            <li>정윤아 <a href="{{ url_for('ml') }}">Sound Classification</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="widget">
+                        <h5 class="widget-title font-alt">Contact Us</h5>
+                        <p>Address: <br><a href="#">강원 춘천시 강원대학길 1 공대 5호관 501호</a></p>
+                        <p>Phone: +1 234 567 89 10</p>
+                        <p>Email:<a href="#">presound@kangwon.ac.kr</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+    <hr class="divider-d">
+    <footer class="footer bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <p class="copyright font-alt">&copy; 2021&nbsp;<a href="{{ url_for('home') }}">Presound</a>, All
+                        Rights
+                        Reserved</p>
+                </div>
+                <div class="col-sm-6">
+                    <div class="footer-social-links"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i
+                            class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-dribbble"></i></a><a href="#"><i
+                            class="fa fa-skype"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+    <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+</main>
+<!--
+JavaScripts
+=============================================
+-->
+<script src="/static/lib/jquery/dist/jquery.js"></script>
+<script src="/static/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/static/lib/wow/dist/wow.js"></script>
+<script src="/static/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
+<script src="/static/lib/isotope/dist/isotope.pkgd.js"></script>
+<script src="/static/lib/imagesloaded/imagesloaded.pkgd.js"></script>
+<script src="/static/lib/flexslider/jquery.flexslider.js"></script>
+<script src="/static/lib/owl.carousel/dist/owl.carousel.min.js"></script>
+<script src="/static/lib/smoothscroll.js"></script>
+<script src="/static/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
+<script src="/static/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
+<script src="/static/js/plugins.js"></script>
+<script src="/static/js/main.js"></script>
+</body>
 </html>
+
+
+
+
