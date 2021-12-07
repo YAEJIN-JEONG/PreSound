@@ -75,8 +75,8 @@
             <div class="collapse navbar-collapse" id="custom-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="ml.html">Sounds</a></li>
-                    <li><a href="stt.html">STT</a></li>
+                    <li><a href="{{ url_for('ml') }}">Sounds</a></li>
+                    <li><a href="{{ url_for('stt') }}">STT</a></li>
                     <li><a href="{{ url_for('news') }}">News</a></li>
                 </ul>
             </div>
@@ -161,7 +161,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
-                        <p class="copyright font-alt">&copy; 2021&nbsp;<a href="index.html">Presound</a>, All Rights
+                        <p class="copyright font-alt">&copy; 2021&nbsp;<a href="{{ url_for('home') }}">Presound</a>, All Rights
                             Reserved</p>
                     </div>
                     <div class="col-sm-6">
