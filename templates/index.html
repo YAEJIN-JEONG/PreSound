@@ -1,9 +1,5 @@
-<html lang="en-US" dir="ltr" >
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--
+<html>
+<head><!--
     Document Title
     =============================================
     -->
@@ -62,14 +58,14 @@
                 <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse">
                     <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span>
                     <span class="icon-bar"></span><span class="icon-bar"></span></button>
-                <a class="navbar-brand" href={{ url_for('home') }}>PreSound</a>
+                <a class="navbar-brand" href="{{ url_for('home') }}">PreSound</a>
             </div>
             <div class="collapse navbar-collapse" id="custom-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href={{ url_for('home') }}>Home</a></li>
-                    <li><a href={{ url_for('ml') }}>Sounds</a></li>
-                    <li><a href={{ url_for('stt') }}>STT</a></li>
-                    <li><a href={{ url_for('news') }}>News</a></li>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('ml') }}">Sounds</a></li>
+                    <li><a href="{{ url_for('stt') }}">STT</a></li>
+                    <li><a href="{{ url_for('news') }}">News</a></li>
                 </ul>
             </div>
         </div>
@@ -78,7 +74,7 @@
         <section class="home-section  home-full-height bg-dark-30" id="home"
                  data-background="/static/images/section-5.jpg">
             <div class="video-player"
-                 data-property="{videoURL:'https://www.youtube.com/watch?v=bNucJgetMjE', containment:'.home-section', startAt:18, mute:false, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:25}"></div>
+                 data-property="{videoURL:'https://www.youtube.com/watch?v=h3fUgOKFMNU', containment:'.home-section', startAt:18, mute:false, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:25}"></div>
             <div class="video-controls-box">
                 <div class="container">
                     <div class="video-controls"><a class="fa fa-volume-up" id="video-volume" href="#">&nbsp;</a><a
@@ -108,13 +104,14 @@
                     <div class="col-sm-6 col-md-3 col-lg-3">
                         <div class="alt-features-item">
                             <div class="alt-features-icon">
-                                <img src="{{ url_for('static', filename = 'high-volume.png')}}"/>
+                                <img src="{{ url_for('static', filename = 'high-volume.png') }}"/>
                             </div>
                             <h3 class="alt-features-title font-alt">Sounds classification</h3>
                             합성곱 신경망(CNN)을 통해 주위에 발생하는 소리 분류
                         </div>
                         <div class="alt-features-item">
-                            <div class="alt-features-icon"><img src="{{ url_for('static', filename = 'shield.png')}}"/></div>
+                            <div class="alt-features-icon"><img src="{{ url_for('static', filename = 'shield.png') }}"/>
+                            </div>
                             <h3 class="alt-features-title font-alt">Risk detection</h3>
                             위험 감지를 통해 안전 사고를 예방
                         </div>
@@ -129,16 +126,19 @@
                     </div>
                     <div class="col-md-6 col-lg-6 hidden-xs hidden-sm">
                         <div class="alt-services-image align-center"><img src="static/images/presound.PNG"
-                        alt="Feature Image" style="height: 300px;width: 700px;"/></div>
+                                                                          alt="Feature Image"
+                                                                          style="height: 300px;width: 700px;"/></div>
                     </div>
                     <div class="col-sm-6 col-md-3 col-lg-3">
                         <div class="alt-features-item">
-                            <div class="alt-features-icon"><img src="{{ url_for('static', filename = 'microphone.png')}}"/></div>
+                            <div class="alt-features-icon"><img
+                                    src="{{ url_for('static', filename = 'microphone.png') }}"/></div>
                             <h3 class="alt-features-title font-alt">STT Service</h3>
                             수화를 알지 못하는 상대방과 청각장애인 간의 원활한 의사소통 가능
                         </div>
                         <div class="alt-features-item">
-                            <div class="alt-features-icon"><img src="{{ url_for('static', filename = 'online.png')}}"/></div>
+                            <div class="alt-features-icon"><img src="{{ url_for('static', filename = 'online.png') }}"/>
+                            </div>
                             <h3 class="alt-features-title font-alt">News and Information</h3>
                             웹 크롤링을 통해 최신 뉴스를 알려 청각장애인의 알 권리 충족
                         </div>
@@ -178,23 +178,24 @@
             </div>
             <ul class="works-grid works-grid-gut works-grid-3 works-hover-w" id="works-grid">
                 <li class="work-item illustration webdesign"><a href={{ url_for('ml') }}>
-                    <div class="work-image"><img src="{{ url_for('static', filename = 'cnn1.png')}}"
-                    alt="Portfolio Item" style="height: 300px;"/></div>
+                    <div class="work-image"><img src="{{ url_for('static', filename = 'cnn1.png') }}"
+                                                 alt="Portfolio Item" style="height: 300px;"/></div>
                     <div class="work-caption font-alt">
                         <h3 class="work-title">Sound Classification</h3>
                         <div class="work-descr">소리 인식 및 분류로 사고 예방</div>
                     </div>
                 </a></li>
                 <li class="work-item marketing photography"><a href={{ url_for('stt') }}>
-                    <div class="work-image"><img src="{{ url_for('static', filename = 'stt.PNG')}}"
-                     alt="Portfolio Item" style="height: 320px;"/></div>
+                    <div class="work-image"><img src="{{ url_for('static', filename = 'stt.PNG') }}"
+                                                 alt="Portfolio Item" style="height: 320px;"/></div>
                     <div class="work-caption font-alt">
                         <h3 class="work-title">STT Service</h3>
                         <div class="work-descr">장애인과 비장애인 간 소통 개선</div>
                     </div>
                 </a></li>
                 <li class="work-item illustration photography"><a href="{{ url_for('news') }}">
-                    <div class="work-image"><img src="{{ url_for('static', filename = 'news.PNG')}}" alt="Portfolio Item" style="height: 320px;"/></div>
+                    <div class="work-image"><img src="{{ url_for('static', filename = 'news.PNG') }}"
+                                                 alt="Portfolio Item" style="height: 320px;"/></div>
                     <form action="/news" method="POST">
                         <div class="work-caption font-alt">
                             <h3 class="work-title">News & Information</h3>
@@ -205,16 +206,18 @@
                 </a></li>
             </ul>
         </section>
+
         <hr class="divider-w">
         <div class="module-small bg-dark">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-3"style="width:50%!important;">
+                    <div class="col-sm-3" style="width:50%!important;">
                         <div class="widget">
                             <h5 class="widget-title font-alt">About PreSound</h5>
                             <p>딥러닝을 이용한 청각장애인 위험방지 및 STT 서비스</p>
                             <p><a>합성곱 신경망(CNN)을 통해 주위에 발생하는 소리를 분류하여 청각장애인에게 위험이 감지되었을 때 소리의 정보를 전달하여 안전사고를 예방할 수 있습니다.
-                            상대방의 음성을 문자로 출력하고(speech to text) 사용자가 입력하는 문자를 소리로 출력하는(text to speech) 서비스를 제공하여 사용자와 상대방 간의 원활한 의사소통이 가능합니다.
+                                상대방의 음성을 문자로 출력하고(speech to text) 사용자가 입력하는 문자를 소리로 출력하는(text to speech) 서비스를 제공하여 사용자와
+                                상대방 간의 원활한 의사소통이 가능합니다.
                                 청각장애인의 알 권리 충족을 위해 웹 크롤링을 사용하여 보조기기 신청자 모집, 채용 지원 등 최신 뉴스를 손쉽게 전달합니다.</a></p>
                         </div>
                     </div>
@@ -234,7 +237,7 @@
                     <div class="col-sm-3">
                         <div class="widget">
                             <h5 class="widget-title font-alt">Contact Us</h5>
-                            <p>Address: <br><a href="#">강원 춘천시 강원대학길 1 공대 5호관 501호</a> </p>
+                            <p>Address: <br><a href="#">강원 춘천시 강원대학길 1 공대 5호관 501호</a></p>
                             <p>Phone: +1 234 567 89 10</p>
                             <p>Email:<a href="#">presound@kangwon.ac.kr</a></p>
                         </div>
@@ -247,7 +250,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
-                        <p class="copyright font-alt">&copy; 2021&nbsp;<a href="index.html">Presound</a>, All Rights
+                        <p class="copyright font-alt">&copy; 2021&nbsp;<a href={{ url_for('home') }}>Presound</a>, All Rights
                             Reserved</p>
                     </div>
                     <div class="col-sm-6">
